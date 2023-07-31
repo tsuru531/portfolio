@@ -11,11 +11,23 @@ export default function Collection() {
   const cards = [
     {
       name: 'chat-app',
-      description: '簡易的なチャットアプリ',
+      description: 'チャットアプリ',
       image: 'collection-image/chat-app.png',
       url: 'https://portfolio-tsuru.web.app/',
       src: 'https://github.com/tsuru531/chat-app'
-    }
+    },
+    {
+      name: 'simple-daw',
+      description: 'シーケンスソフト',
+      image: 'collection-image/simple-daw.png',
+      src: 'https://github.com/tsuru531/simple-daw'
+    },
+    {
+      name: 'ドラムスクールHP',
+      description: '管理中のドラムスクールのホームページ',
+      image: 'collection-image/drum-school.png',
+      url: 'https://www.kosei-drumschool.com/',
+    },
   ]
   return (
     <Container sx={{ py: 8 }} maxWidth="md">
@@ -38,12 +50,16 @@ export default function Collection() {
                 <Typography>{card.description}</Typography>
               </CardContent>
               <CardActions>
-                <a href={card.url} target="_blank" rel="noopener noreferrer">
-                  <Button size="small">View</Button>
-                </a>
-                <a href={card.src} target="_blank" rel="noopener noreferrer">
-                  <Button size="small">Src</Button>
-                </a>
+                {card.url &&
+                  <a href={card.url} target="_blank" rel="noopener noreferrer">
+                    <Button size="small">View</Button>
+                  </a>
+                }
+                {card.src &&
+                  <a href={card.src} target="_blank" rel="noopener noreferrer">
+                    <Button size="small">Src</Button>
+                  </a>
+                }
               </CardActions>
             </Card>
           </Grid>
